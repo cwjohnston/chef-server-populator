@@ -55,6 +55,9 @@ begin
   backup.run_command
   backup.error!
 
+  sync = Mixlib::ShellOut.new('sync')
+  sync.run_command
+  sync.error!
 
   backup_data = Mixlib::ShellOut.new(
     "tar -czf #{data_file} /var/opt/opscode /etc/opscode"
